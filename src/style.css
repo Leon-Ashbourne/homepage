@@ -11,6 +11,7 @@ body {
     padding: 0;
     margin: 0;
     color: white;
+    overflow-x: hidden;
 }
 :root {
     padding: 0;
@@ -112,7 +113,7 @@ main h1{
 .works-showcase {
     display: flex;
     flex-direction: column;
-    margin: 30px auto;
+    margin: 30px auto 50px;
     padding: 30px;
 }
 
@@ -169,8 +170,10 @@ footer {
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-container div {
@@ -180,11 +183,7 @@ footer {
     gap: 10px;
     padding: 5px;
 }
-.contact-container h3 {
-    grid-column: 1/5;
-    text-align: center;
-    
-}
+
 .contact-container div h4 {
     font-size: 20px;
     margin: 0;
@@ -199,6 +198,24 @@ footer {
 
 
 /* media  */
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        border-bottom: none;
+    }
+    .random-pic {
+        max-width: 200px;
+    }
+    .works-showcase {
+        padding: 0;
+    }
+    .works-showcase h3 {
+        font-size: 24px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .info-section {
         flex-direction: column-reverse;
@@ -209,4 +226,10 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    footer {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+}
 
